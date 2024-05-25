@@ -1,9 +1,28 @@
-$ wget https://downloads.apache.org/hive/hive-4.0.0/apache-hive-4.0.0-bin.tar.gz
-$ tar -xzvf apache-hive-4.0.0-bin.tar.gz
+$ sudo apt update -y
+$ wget https://downloads.apache.org/hive/hive-3.1.2/apache-hive-3.1.2-bin.tar.gz
+$ tar xzf apache-hive-3.1.2-bin.tar.gz
 
-$ sudo mv apache-hive-4.0.0-bin /opt/hive
+$ sudo mv apache-hive-3.1.2-bin /opt/hive
 
-$
+$ sudo nano ~/.bashrc
 
-export HIVE_HOME=/opt/hive                     
-export PATH=$HIVE_HOME/bin:$PATH
+    export HIVE_HOME=/opt/hive
+    export PATH=$PATH:$HIVE_HOME/bin
+
+$ sudo nano $HIVE_HOME/bin/hive-config.sh
+
+
+<------------------ Create Hive directories in HDFS ------------------>
+
+$ hdfs dfs -mkdir /tmp
+$ hdfs dfs -chmod g+w /tmp
+$ hdfs dfs -mkdir -p /user/hive/warehouse
+$ hdfs dfs -chmod g+w /user/hive/warehouse
+
+<------------------ Initialize Derby and hive ------------------>
+
+$ schematool -initSchema -dbType derby
+
+<------------------ Launching Hive ------------------>
+
+$ hive
