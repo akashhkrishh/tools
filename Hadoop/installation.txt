@@ -33,40 +33,43 @@ $ sudo nano $HADOOP_HOME/etc/hadoop/hadoop-env.sh
 $ sudo nano $HADOOP_HOME/etc/hadoop/core-site.xml
 
     <property>
-      <name>hadoop.tmp.dir</name>
-      <value>/home/akashh/tmpdata</value>
-      <description>A base for other temporary directories.</description>
+        <name>hadoop.tmp.dir</name>
+        <value>/home/akashh/tmpdata</value>
+        <description>A base for other temporary directories.</description>
     </property>
     <property>
-      <name>fs.default.name</name>
-      <value>hdfs://localhost:54310</value>
-      <description>The name of the default file system></description>
+        <name>fs.default.name</name>
+        <value>hdfs://localhost:54310</value>
+        <description>The name of the default file system></description>
     </property>
-
-$ sudo mv $HADOOP_HOME/etc/hadoop/mapred-site.xml.template $HADOOP_HOME/etc/hadoop/mapred-site.xml
-
-<----  Edit mapred-site.xml File ---->
 
 $ sudo nano $HADOOP_HOME/etc/hadoop/mapred-site.xml
 
     <property>
-             <name>mapred.job.tracker</name>
-             <value>localhost:54311</value>
+        <name>mapred.job.tracker</name>
+        <value>localhost:54311</value>
     </property>
 
-<----  Edit hdfs-site.xml File ---->
 
 $ sudo nano $HADOOP_HOME/etc/hadoop/hdfs-site.xml
 
     <property>
-             <name>dfs.replication</name>
-             <value>1</value>
+        <name>dfs.replication</name>
+        <value>1</value>
     </property>
     <property>
-            <name>dfs.namenode.name.dir</name>
-            <value>/home/akashh/dfsdata/namenode</value>
+        <name>dfs.namenode.name.dir</name>
+        <value>/home/akashh/dfsdata/namenode</value>
     </property>
     <property>
-            <name>dfs.datanode.name.dir</name>
-            <value>/home/akashh/dfsdata/datanode</value>
+        <name>dfs.datanode.name.dir</name>
+        <value>/home/akashh/dfsdata/datanode</value>
     </property>
+
+<------------------------------After Installation------------------------------>
+
+In Browser : http://localhost:50070  | http://localhost:9870
+
+$ hdfs namenode -format
+$ start-all.sh
+$ jps
