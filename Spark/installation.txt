@@ -11,3 +11,5 @@ $ sudo nano ~/.bashrc
     
 $ source ~/.bashrc
 $ spark-shell
+
+http://localhost:8080
