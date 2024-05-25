@@ -1,1 +1,9 @@
+$ wget https://downloads.apache.org/hive/hive-4.0.0/apache-hive-4.0.0-bin.tar.gz
+$ tar -xzvf apache-hive-4.0.0-bin.tar.gz
 
+$ sudo mv apache-hive-4.0.0-bin /opt/hive
+
+$
+
+export HIVE_HOME=/opt/hive                     
+export PATH=$HIVE_HOME/bin:$PATH
