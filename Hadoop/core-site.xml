@@ -24,7 +24,7 @@
    </property>
    <property>
       <name>hadoop.tmp.dir</name>
-      <value>/home/akashh/tmp</value>
+      <value>/opt/Hadoop/tmp</value>
       <description>A base for other temporary directories.</description>
    </property>
    <!-- Other properties can go here -->
